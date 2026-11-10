@@ -3,6 +3,8 @@ import { Header } from './components/Header'
 import { Footer } from './components/Footer'
 import { CardCurso } from './components/Card'
 import { Inicio } from './pages/Inicio'
+import { Sobre } from './pages/Sobre'
+
 import './App.css'
 
 function PaginaCursos() {
@@ -64,7 +66,7 @@ export default function App() {
             <main>
                 <Routes>
                     <Route path="/" element={<Inicio />} />
-                    <Route path="/sobre" element={<h1>Página Sobre</h1>} />
+                    <Route path="/sobre" element={<Sobre />} />
                     <Route path="/cursos" element={<PaginaCursos />} />
                     <Route path="/ingresso" element={<h1>Página Ingresso</h1>} />
                     <Route path="/noticias" element={<h1>Página Notícias</h1>} />
