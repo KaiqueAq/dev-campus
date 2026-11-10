@@ -1,13 +1,13 @@
 import { BrowserRouter, Routes, Route } from 'react-router-dom'
 import { Header } from './components/Header'
 import { Footer } from './components/Footer'
-import { CardCurso } from './components/Card'
+import { Card } from './components/Card'
 import { Inicio } from './pages/Inicio'
 import { Sobre } from './pages/Sobre'
 
 import './App.css'
 
-function PaginaCursos() {
+function Cursos() {
     const listaCursos = [
         {
             id: 1,
@@ -43,7 +43,7 @@ function PaginaCursos() {
             <h1>Nossos Cursos</h1>
             <div className="courses-grid">
                 {listaCursos.map((curso) => (
-                    <CardCurso
+                    <Card
                         key={curso.id}
                         modalidade={curso.modalidade}
                         duracao={curso.duracao}
@@ -67,7 +67,7 @@ export default function App() {
                 <Routes>
                     <Route path="/" element={<Inicio />} />
                     <Route path="/sobre" element={<Sobre />} />
-                    <Route path="/cursos" element={<PaginaCursos />} />
+                    <Route path="/cursos" element={<Cursos />} />
                     <Route path="/ingresso" element={<h1>Página Ingresso</h1>} />
                     <Route path="/noticias" element={<h1>Página Notícias</h1>} />
                     <Route path="/contato" element={<h1>Página Contato</h1>} />
