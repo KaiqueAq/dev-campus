@@ -1,3 +1,19 @@
+/* Adicione ou substitua isso no topo do seu index.css ou do seu styles.css */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html, body, #root {
+  width: 100%;
+  margin: 0;
+  padding: 0;
+  overflow-x: hidden; /* Evita que o site crie barra de rolagem para os lados */
+}
+
+
+
 .counter {
   font-size: 16px;
   padding: 5px 10px;
