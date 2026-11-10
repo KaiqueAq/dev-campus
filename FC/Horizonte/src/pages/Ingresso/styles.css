@@ -18,11 +18,12 @@ html, body, #root {
   background-repeat: no-repeat;
   
   /* Proporção 10:3 exata */
-  width: 100%;
-  max-width: 1000px;
+  width: 100vw;
+  max-width: none;
+  margin-bottom: 79px;
   aspect-ratio: 10 / 3;
   
-  margin: 0 auto;
+  margin-left: calc(50% - 50vw);
   position: relative;
   display: flex;
   flex-direction: column;
@@ -69,8 +70,6 @@ html, body, #root {
 /* ===== RESPONSIVIDADE - TABLETS E CELULARES ===== */
 @media (max-width: 768px) {
   .hero-banner {
-    width: 90%;
-    max-width: 100%;
     aspect-ratio: 10 / 3;
   }
   .hero-banner h1 {
@@ -87,7 +86,6 @@ html, body, #root {
 /* ===== RESPONSIVIDADE - CELULARES PEQUENOS ===== */
 @media (max-width: 480px) {
   .hero-banner {
-    width: 95%;
     aspect-ratio: 10 / 3;
   }
   .hero-banner h1 {
@@ -101,3 +99,193 @@ html, body, #root {
     bottom: -50px;
   }
 }
+
+
+    :root {
+      --azul-hero: #154bcc;
+      --azul-card-ativo: #c2ebff;
+      --cinza-card: #f4f4f4;
+      --texto: #111;
+      --texto-suave: #444;
+      --branco: #fff;
+      --raio: 8px;
+      --fonte-titulo: "Montserrat", Arial, sans-serif;
+      --fonte-texto: "Inter", Arial, sans-serif;
+    }
+
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+
+    body {
+      font-family: var(--fonte-texto);
+      color: var(--texto);
+      background: var(--branco);
+    }
+
+    /* ---------- HERO (faixa azul) ---------- */
+    .hero {
+      background: var(--azul-hero);
+      color: var(--branco);
+      padding: 16px 0 44px;
+    }
+    .hero__container {
+      max-width: 1280px;
+      margin: 0 auto;
+      padding: 0 88px;
+    }
+    .hero__titulo {
+      font-family: var(--fonte-titulo);
+      font-weight: 400;
+      font-size: 48px;
+      line-height: 1.2;
+    }
+    .hero__subtitulo {
+      margin-top: 8px;
+      font-size: 16px;
+    }
+
+    /* ---------- SEÇÃO: imagem + carrossel ---------- */
+    .ingresso {
+      max-width: 1384px;
+      margin: 0 auto;
+      padding: 56px 40px 48px 65px;
+      display: flex;
+      align-items: flex-start;
+    }
+
+    .ingresso__imagem {
+      flex: 0 0 432px;
+      height: 525px;
+      border-radius: var(--raio);
+      overflow: hidden;
+      background: #222;
+    }
+    .ingresso__imagem img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+    }
+
+    .ingresso__conteudo {
+      flex: 1;
+      min-width: 0;
+      padding-top: 56px;
+      margin-left: 32px;
+    }
+    .ingresso__titulo {
+      font-family: var(--fonte-titulo);
+      font-weight: 400;
+      font-size: 32px;
+      line-height: 1.2;
+    }
+    .ingresso__descricao {
+      margin-top: 16px;
+      font-size: 16px;
+    }
+
+    /* ---------- CARROSSEL ---------- */
+    .carrossel {
+      /* sobrepõe a imagem como no original */
+      margin-left: -24px;
+      margin-top: 32px;
+    }
+    .carrossel__trilho {
+      display: flex;
+      gap: 24px;
+      overflow-x: auto;
+      scroll-snap-type: x mandatory;
+      scrollbar-width: none;
+    }
+    .carrossel__trilho::-webkit-scrollbar { display: none; }
+
+    .card {
+      flex: 0 0 274px;
+      min-height: 240px;
+      padding: 32px 32px 28px;
+      background: var(--cinza-card);
+      border-radius: var(--raio);
+      scroll-snap-align: start;
+      display: flex;
+      flex-direction: column;
+    }
+    .card--ativo { background: var(--azul-card-ativo); }
+
+    .card__titulo {
+      font-family: var(--fonte-titulo);
+      font-weight: 500;
+      font-size: 22px;
+      line-height: 1.2;
+    }
+    .card__texto {
+      margin-top: 16px;
+      font-size: 16px;
+      line-height: 1.5;
+      color: var(--texto-suave);
+    }
+    .card__link {
+      margin-top: auto;
+      align-self: flex-start;
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding-bottom: 2px;
+      border-bottom: 1px solid var(--texto);
+      color: var(--texto);
+      font-size: 16px;
+      text-decoration: none;
+    }
+
+    /* ---------- CONTROLES (bolinhas + setas) ---------- */
+    .carrossel__controles {
+      margin-top: 32px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+    .carrossel__pontos {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      padding-left: 60px;
+    }
+    .ponto {
+      width: 5px;
+      height: 5px;
+      border-radius: 50%;
+      border: 0;
+      background: var(--texto);
+      cursor: pointer;
+    }
+    .ponto--ativo { width: 9px; height: 9px; }
+
+    .carrossel__setas {
+      display: flex;
+      gap: 16px;
+      padding-right: 86px;
+    }
+    .seta {
+      width: 32px;
+      height: 32px;
+      border-radius: 50%;
+      border: 0;
+      background: var(--texto);
+      color: var(--branco);
+      font-size: 18px;
+      line-height: 1;
+      cursor: pointer;
+    }
+
+    /* ---------- RESPONSIVO ---------- */
+    @media (max-width: 900px) {
+      .hero__container { padding: 0 24px; }
+      .hero__titulo { font-size: 36px; }
+      .ingresso { flex-direction: column; padding: 32px 24px; }
+      .ingresso__imagem { flex-basis: auto; width: 100%; height: 320px; }
+      .ingresso__conteudo { margin-left: 0; padding-top: 32px; }
+      .carrossel { margin-left: 0; }
+      .carrossel__pontos { padding-left: 0; }
+      .carrossel__setas { padding-right: 0; }
+    }
+  
+
+    
