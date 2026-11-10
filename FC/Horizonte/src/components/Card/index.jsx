@@ -12,7 +12,22 @@ export function Card(props) {
           <span className="course-card__duration">{props.duracao}</span>
         </div>
 
-        <h3 className="course-card__title">{props.titulo}</h3>
+        <div className="course-card__heading">
+          <h3 className="course-card__title">{props.titulo}</h3>
+          <svg
+            className="course-card__icon"
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            strokeWidth="1.7"
+            strokeLinecap="round"
+            strokeLinejoin="round"
+            aria-hidden="true"
+          >
+            <path d="m2 9 10-5 10 5-10 5L2 9Z" />
+            <path d="M6 11v5c3.5 2.5 8.5 2.5 12 0v-5M22 9v6" />
+          </svg>
+        </div>
         <p className="course-card__description">{props.descricao}</p>
 
         <Link className="button course-card__button" to={props.link}>

@@ -1,4 +1,5 @@
 import { Link } from 'react-router-dom'
+import logo from '../../assets/logo.png'
 import './styles.css'
 
 export function Inicio() {
@@ -29,7 +30,6 @@ export function Inicio() {
     <div className="page-inicio">
       <section className="page-header">
         <div className="container">
-          <span className="page-header__route">/</span>
           <h1 className="page-header__title">Início</h1>
           <p className="page-header__description">
             Apresentação da faculdade e destaques do site.
@@ -60,6 +60,9 @@ export function Inicio() {
               </Link>
             </div>
           </div>
+          <figure className="apresentacao__marca">
+            <img src={logo} alt="Logo da Faculdade Horizonte" />
+          </figure>
         </div>
       </section>
 
