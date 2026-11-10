@@ -2,6 +2,7 @@ import { BrowserRouter, Routes, Route } from 'react-router-dom'
 import { Header } from './components/Header'
 import { Footer } from './components/Footer'
 import { CardCurso } from './components/Card'
+import { Inicio } from './pages/Inicio'
 import './App.css'
 
 function PaginaCursos() {
@@ -60,9 +61,9 @@ export default function App() {
         <BrowserRouter>
             <Header />
 
-            <main style={{ padding: '2rem' }}>
+            <main>
                 <Routes>
-                    <Route path="/" element={<h1>Página Início</h1>} />
+                    <Route path="/" element={<Inicio />} />
                     <Route path="/sobre" element={<h1>Página Sobre</h1>} />
                     <Route path="/cursos" element={<PaginaCursos />} />
                     <Route path="/ingresso" element={<h1>Página Ingresso</h1>} />
