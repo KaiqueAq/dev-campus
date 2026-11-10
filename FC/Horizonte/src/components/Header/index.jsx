@@ -9,7 +9,7 @@ export function Header() {
                 <Link className="brand" to="/" aria-label="Página inicial">
                     <img className="brand__logo" src={logo} alt="" />
                     <span className="brand__name">
-                        <strong>Falcudade Horizonte</strong>
+                        <strong>Faculdade Horizonte</strong>
                         <span>Educação para o futuro</span>
                     </span>
                 </Link>
