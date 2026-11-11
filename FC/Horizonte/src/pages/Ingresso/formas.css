@@ -1,165 +1,191 @@
-/* ===== NOVA SEÇÃO: FORMAS DETALHADAS ===== */
-.formas {
+.pagina-vagas .formas {
   --rosa: #f0325f;
   --moldura: #1f5de6;
   width: 100%;
 }
 
-.forma {
+.pagina-vagas .forma {
   width: 100%;
-  padding: 40px 24px;
+  padding: clamp(40px, 6vw, 72px) 24px;
 }
 
-.forma__inner {
-  max-width: 1000px;
-  margin: 0 auto;
+.pagina-vagas .forma__inner {
   display: flex;
+  max-width: 1120px;
   align-items: center;
   justify-content: space-between;
-  gap: 48px;
+  gap: clamp(32px, 6vw, 72px);
+  margin: 0 auto;
 }
 
-/* ----- Temas ----- */
-.forma--claro {
-  background: #fff;
-  color: #111;
+.pagina-vagas .forma--claro {
   --cor-bullet: #154bcc;
   --moldura: #1f5de6;
+  color: #111;
+  background: #fff;
 }
 
-.forma--escuro {
-  background: #154bcc;
-  color: #fff;
+.pagina-vagas .forma--escuro {
   --cor-bullet: #fff;
-  --moldura: #5d8cff;
+  --moldura: #8eafff;
+  color: #fff;
+  background: #154bcc;
 }
 
-/* No tema escuro a imagem fica à esquerda e o texto à direita */
-.forma--escuro .forma__inner {
+.pagina-vagas .forma--escuro .forma__inner {
   flex-direction: row-reverse;
-  justify-content: flex-end;
 }
 
-/* ----- Texto ----- */
-.forma__texto {
-  flex: 1;
-  max-width: 440px;
+.pagina-vagas .forma__texto {
+  flex: 1 1 0;
+  max-width: 500px;
 }
 
-.forma__titulo {
+.pagina-vagas .forma__titulo {
+  margin: 0;
   font-family: var(--fonte-titulo, "Montserrat", Arial, sans-serif);
-  font-weight: 500;
-  font-size: 24px;
-  line-height: 1.2;
-}
-
-.forma__subtitulo {
-  margin-top: 8px;
-  font-size: 12px;
-  line-height: 1.4;
-}
-
-.forma--escuro .forma__subtitulo {
+  font-size: clamp(23px, 3vw, 30px);
   font-weight: 600;
+  line-height: 1.25;
 }
 
-.forma__lista {
-  list-style: none;
-  margin-top: 20px;
+.pagina-vagas .forma__subtitulo {
+  margin: 12px 0 0;
+  font-size: 15px;
+  line-height: 1.65;
+}
+
+.pagina-vagas .forma--escuro .forma__subtitulo {
+  font-weight: 500;
+}
+
+.pagina-vagas .forma__lista {
   display: flex;
   flex-direction: column;
-  gap: 16px;
+  gap: 14px;
+  margin: 22px 0 0;
+  padding: 0;
+  list-style: none;
 }
 
-.forma__lista li {
+.pagina-vagas .forma__lista li {
   position: relative;
-  padding-left: 28px;
+  padding-left: 26px;
   font-size: 14px;
-  line-height: 1.4;
+  line-height: 1.6;
 }
 
-/* quadradinho do marcador */
-.forma__lista li::before {
-  content: "";
+.pagina-vagas .forma__lista li::before {
   position: absolute;
+  top: 7px;
   left: 0;
-  top: 3px;
   width: 10px;
   height: 10px;
   border-radius: 2px;
   background: var(--cor-bullet);
+  content: "";
 }
 
-.forma__botoes {
-  margin-top: 24px;
+.pagina-vagas .forma__botoes {
   display: flex;
   flex-wrap: wrap;
   gap: 12px;
+  margin-top: 26px;
 }
 
-/* ----- Botões ----- */
-.btn {
-  display: inline-block;
-  padding: 8px 16px;
-  border-radius: 4px;
-  font-size: 11px;
-  font-weight: 600;
-  text-decoration: none;
+.pagina-vagas .btn {
+  display: inline-flex;
+  min-height: 42px;
+  align-items: center;
+  justify-content: center;
+  padding: 9px 18px;
   border: 1px solid transparent;
-  cursor: pointer;
+  border-radius: 5px;
+  font-size: 15px;
+  font-weight: 700;
+  text-decoration: none;
+  transition: background-color 160ms ease, color 160ms ease;
 }
 
-.btn--primario {
-  background: var(--rosa);
+.pagina-vagas .btn--primario {
   color: #fff;
+  background: #c5224c;
 }
 
-.btn--contorno {
-  background: transparent;
-  color: #fff;
+.pagina-vagas .btn--primario:hover {
+  background: #a91d40;
+}
+
+.pagina-vagas .btn--contorno {
   border-color: #fff;
+  color: #fff;
+  background: transparent;
 }
 
-.btn--branco {
-  background: #fff;
+.pagina-vagas .btn--contorno:hover {
   color: #154bcc;
+  background: #fff;
 }
 
-/* ----- Imagem com moldura ----- */
-.forma__imagem {
+.pagina-vagas .btn--branco {
+  color: #154bcc;
+  background: #fff;
+}
+
+.pagina-vagas .btn--branco:hover {
+  background: #e8efff;
+}
+
+.pagina-vagas .forma__imagem {
   position: relative;
-  flex: 0 0 auto;
-  width: 360px;
+  flex: 0 1 420px;
+  min-width: 0;
 }
 
-.forma__imagem img {
+.pagina-vagas .forma__imagem img,
+.pagina-vagas .forma__imagem iframe {
   display: block;
   width: 100%;
-  height: 300px;
-  object-fit: cover;
+  height: 320px;
+  border: 0;
   border-radius: 56px 8px 56px 8px;
+  object-fit: cover;
 }
 
-/* contorno desenhado por cima da foto */
-.forma__imagem::after {
-  content: "";
+.pagina-vagas .forma__imagem::after {
   position: absolute;
-  inset: 10px 10px 10px 10px;
+  inset: 10px;
   border: 2px solid var(--moldura);
   border-radius: 48px 6px 48px 6px;
+  content: "";
   pointer-events: none;
 }
 
-/* ----- Responsivo ----- */
 @media (max-width: 768px) {
-  .forma__inner,
-  .forma--escuro .forma__inner {
+  .pagina-vagas .forma__inner,
+  .pagina-vagas .forma--escuro .forma__inner {
     flex-direction: column-reverse;
     align-items: stretch;
-    gap: 24px;
+    gap: 28px;
   }
 
-  .forma__texto { max-width: none; }
-  .forma__imagem { width: 100%; }
-  .forma__imagem img { height: 260px; }
+  .pagina-vagas .forma__texto {
+    max-width: none;
+  }
+
+  .pagina-vagas .forma__imagem {
+    flex: none;
+    width: 100%;
+  }
+
+  .pagina-vagas .forma__imagem img,
+  .pagina-vagas .forma__imagem iframe {
+    height: clamp(220px, 58vw, 320px);
+  }
+}
+
+@media (max-width: 480px) {
+  .pagina-vagas .forma {
+    padding: 36px 18px;
+  }
 }

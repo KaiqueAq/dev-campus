@@ -87,7 +87,7 @@ export default function Ingresso() {
                     <div className="logo-container">
                         <img src={imgLogo} alt="Logo Novo Horizonte" className="logo-badge" />
                     </div>
-                    <h1>Viação Novo Horizonte</h1>
+                    
                 </div>
             </header>
 
